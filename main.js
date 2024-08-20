@@ -2,31 +2,12 @@ import { Task } from './components/Task.js'
 import { reload } from './utils/helpres.js'
 import { ApiCall } from './utils/http.request.js'
 
-// const arr = [
-// 	{
-// 		id: 1,
-// 		title: 'Buy milk',
-// 		description: 'Lorem ipsum dolor sit amet',
-// 		status: '1',
-// 	},
-// 	{
-// 		id: 2,
-// 		title: 'hello world',
-// 		description: 'Lorem ipsum dolor sit amet',
-// 		status: '2',
-// 	},
-// 	{
-// 		id: 3,
-// 		title: 'bye bye',
-// 		description: 'Lorem ipsum dolor sit amet',
-// 		status: '3',
-// 	},
-// ]
+
 
 const apiCall = new ApiCall('http://localhost:8080')
 
 
-const info = apiCall.getData('/info')
+const info = await apiCall.getData('/info')
 
 const cols = document.querySelectorAll('.desk_container')
 
@@ -73,7 +54,7 @@ form.onsubmit = async (e) => {
   const info = {
 		Title: new FormData(form).get('title'),
 		Description: new FormData(form).get('description'),
-		Labels: new FormData(form).get('status'),
+		status: new FormData(form).get('status'),
 	}
 
   const res = await apiCall.postData('/info', info)
