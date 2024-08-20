@@ -1,0 +1,438 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: Roboto;
+}
+button {
+	cursor: pointer;
+}
+#user_img {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+}
+
+.head {
+	display: flex;
+	justify-content: space-between;
+	padding: 18px;
+	min-height: 48px;
+	background-color: #1d2125;
+}
+
+.left {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.right {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.main_buttons {
+	display: flex;
+	padding: 5px;
+	background-color: #1d2125;
+	color: #9fadbc;
+	border: none;
+	align-items: center;
+	cursor: pointer;
+}
+
+#add_btn {
+	width: 80px;
+	height: 32px;
+	font-family: Roboto;
+	background-color: skyblue;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#search {
+	width: 200px;
+	height: 32px;
+	background-color: #22272b;
+	border: grey solid 1px;
+	padding: 10px;
+	border-radius: 10px;
+	color: #8c9bab;
+	font-size: 14px;
+}
+
+.container {
+	max-width: 1500px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.desks {
+	width: 260px;
+	min-height: 90px;
+	background-color: #221e24;
+}
+
+.firs_desk {
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	color: #9fadbc;
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.close_desk {
+	border: none;
+	background-color: #221e24;
+	width: 28px;
+	height: 28px;
+	cursor: pointer;
+}
+
+.sidebar {
+	width: 250px;
+	height: 50vh;
+	background-color: #221e24;
+	padding: 20px;
+	color: #9fadbc;
+
+	box-sizing: border-box;
+}
+
+.menu-item {
+	margin: 10px 0;
+	font-size: 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+}
+
+.menu-section {
+	margin-top: 20px;
+}
+
+.section-title {
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.submenu-item {
+	margin: 5px 0;
+	padding-left: 20px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.board-item {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	padding: 5px;
+	background-color: #383838;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.color-block {
+	width: 20px;
+	height: 20px;
+	border-radius: 4px;
+	margin-right: 10px;
+}
+
+.board-title {
+	font-size: 14px;
+}
+
+.plus-icon {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.dropdown-icon {
+	font-size: 12px;
+}
+
+.premium_sub {
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	color: white;
+	margin-top: 154px;
+	background-color: #221e24;
+	padding: 15px;
+}
+
+.sub {
+	background: linear-gradient(91.75deg, #9f8fef 17.5%, #943d73 100%);
+	padding: 7px;
+	text-align: center;
+	color: #1d2125;
+}
+
+.desk_head {
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	background-color: #6d304e;
+	padding-left: 30px;
+	padding-right: 10px;
+}
+.left_head {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	color: white;
+}
+#board {
+	width: 110px;
+	height: 32px;
+	font-family: Roboto;
+}
+
+#share {
+	width: 110px;
+	height: 32px;
+	font-family: Roboto;
+}
+
+#filter {
+	color: white;
+	background-color: #6d304e;
+	border: none;
+}
+.right_desk {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+
+.big_desk {
+	background-color: #903f66;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 20px;
+}
+
+.todo {
+	width: 272px;
+	min-height: 130px;
+	margin: 20px;
+	background-color: #101204;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 12px;
+	color: #b6c2cf;
+}
+
+#enter {
+	width: 236px;
+	height: 36px;
+	background-color: #1d2125;
+	border: none;
+	padding: 7px;
+	border-radius: 10px;
+	color: #b6c2cf;
+}
+
+#add_card {
+	background-color: #101204;
+	width: 224px;
+	height: 28px;
+	border: none;
+	color: #b6c2cf;
+	text-align: start;
+}
+
+.desk_container {
+	width: 100%;
+	min-height: 450px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	background-color: #903f66;
+}
+
+.desk_cont {
+	display: flex;
+	gap: 20px;
+}
+
+.task-card {
+	background-color: #221e24;
+	color: white;
+	border-radius: 8px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	padding: 16px;
+	width: 100%;
+	transition: box-shadow 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.task-card:active {
+	cursor: grabbing;
+}
+
+.task-card:hover {
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.task-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.task-title {
+	font-size: 18px;
+	margin: 0;
+	font-weight: bold;
+}
+
+.task-options {
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	color: #888;
+}
+
+.task-body {
+	margin-bottom: 10px;
+}
+
+.task-description {
+	font-size: 14px;
+	color: #555;
+	margin: 0 0 10px;
+}
+
+.task-labels {
+	display: flex;
+	gap: 5px;
+}
+
+.label {
+	padding: 5px 10px;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 12px;
+}
+
+.label-green {
+	background-color: #61bd4f;
+}
+
+.label-red {
+	background-color: #eb5a46;
+}
+
+.task-footer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.task-button {
+	background-color: #0079bf;
+	color: #fff;
+	border: none;
+	padding: 6px 12px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.task-button:hover {
+	background-color: #005a93;
+}
+
+.hide {
+	display: none;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(10px); /* Эффект blur для фона */
+	/* display: flex; */
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.task-form-container {
+	background-color: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	max-width: 400px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+input,
+textarea,
+select {
+	width: 100%;
+	padding: 8px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+button[type='submit'] {
+	background-color: #28a745;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button[type='submit']:hover {
+	background-color: #218838;
+}
+
+.close_dialog {
+	margin-left: 300px;
+	background-color: red;
+	border-radius: 10px;
+	color: white;
+	border: none;
+	width: 70px;
+	height: 30px;
+}
