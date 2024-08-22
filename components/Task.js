@@ -3,14 +3,14 @@ export function Task(item) {
 	const taskCard = document.createElement('div')
 	taskCard.className = 'task-card'
 	taskCard.draggable = true
-
+	taskCard.setAttribute('data-id', item.id)
 	// Создаем заголовок карточки
 	const taskHeader = document.createElement('div')
 	taskHeader.className = 'task-header'
 
 	const taskTitle = document.createElement('h3')
 	taskTitle.className = 'task-title'
-	taskTitle.textContent = item.Title
+	taskTitle.textContent = item.title
 
 	const taskOptions = document.createElement('button')
 	taskOptions.className = 'task-options'
@@ -25,7 +25,7 @@ export function Task(item) {
 
 	const taskDescription = document.createElement('p')
 	taskDescription.className = 'task-description'
-	taskDescription.textContent = item.Description
+	taskDescription.textContent = item.description
 
 	taskBody.appendChild(taskDescription)
 
@@ -51,6 +51,7 @@ export function Task(item) {
 
 	taskCard.ondragstart = () => {
 		taskCard.id = 'selected'
+		
 
 		setTimeout(() => {
 			taskCard.classList.add('hide')

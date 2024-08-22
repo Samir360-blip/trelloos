@@ -436,3 +436,22 @@ button[type='submit']:hover {
 	width: 70px;
 	height: 30px;
 }
+
+.trash {
+	width: 70px;
+	height: 70px;
+	position: fixed;
+	bottom: 1%;
+	right: 1%;
+	translate: -50% -50%;
+}
+
+.trash img {
+	width: 90px;
+	height: 90px;
+	display: none;
+}
+
+audio {
+	display: none;
+}

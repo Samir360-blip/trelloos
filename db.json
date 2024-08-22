@@ -1,28 +1,3 @@
 {
-  "info": [
-    {
-      "id": "7f1b",
-      "Title": "Visa",
-      "Description": "Visa",
-      "status": "1"
-    },
-    {
-      "id": "33dc",
-      "Title": "Visa",
-      "Description": "8613",
-      "status": "1"
-    },
-    {
-      "id": "fe0d",
-      "Title": "1",
-      "Description": "1",
-      "status": "3"
-    },
-    {
-      "id": "1fd4",
-      "Title": "2",
-      "Description": "2",
-      "status": "2"
-    }
-  ]
+  "info": []
 }
