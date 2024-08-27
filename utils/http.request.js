@@ -1,27 +1,21 @@
 import axios from 'axios'
 
 export class ApiCall {
-	constructor(url) {
+	constructor(url, token = null) {
 		this.url = url
-		// this.apikey = apikey || null
+		this.token = token
 	}
 
 	async getData(path) {
 		try {
-			const res = await axios.get(
-				this.url + path /*, {
-				headers: {
-					apikey: this.apikey
-				},
-				params: params
-			} */
-			)
+			const res = await axios.get(this.url + path)
 
 			if (res.status !== 200) {
 				throw new Error('Something went wrong')
 			}
 			return res.data
 		} catch (e) {
+			alert(e.message)
 			throw new Error(e.message)
 		}
 	}
@@ -74,6 +68,19 @@ export class ApiCall {
 				},
 				onClick: function () {},
 			}).showToast()
+			throw new Error(e.message)
+		}
+	}
+
+	async deleteData(path) {
+		try {
+			const res = await axios.delete(this.url + path)
+
+			if (res.status === 201 || res.status === 200) {
+				throw new Error('Something went wrong')
+			}
+			return res.data
+		} catch (e) {
 			throw new Error(e.message)
 		}
 	}

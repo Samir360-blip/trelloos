@@ -15,8 +15,8 @@
 		<header>
 			<div class="head">
 				<nav class="left">
-					<img src="./public/Frame.svg" alt="Frame" />
-					<img src="./public/pseudo.svg" alt="logo" />
+					<img src="/Frame.svg" alt="Frame" />
+					<img src="/pseudo.svg" alt="logo" />
 					<button class="main_buttons" id="work_btn">
 						Рабочие пространства
 						<svg
@@ -84,8 +84,8 @@
 					<form>
 						<input type="text" placeholder="Поиск" id="search" name="search" />
 					</form>
-					<img src="./public/push.svg" alt="push" />
-					<img src="./public/question.svg" alt="question" />
+					<img src="/push.svg" alt="push" />
+					<img src="/question.svg" alt="question" />
 
 					<img
 						src="https://lh3.googleusercontent.com/a/ACg8ocJAWwhNmPXYkqC9Ysbdtf9Hsw4BuP9cOPtcHxoGi3P5PztGb1pQ=s288-c-no"
@@ -157,13 +157,13 @@
 				<div class="desk_head">
 					<div class="left_head">
 						<span>desk</span>
-						<img src="./public/span.css-snhnyn.svg" alt="span.css-snhnyn" />
-						<img src="./public/people.svg" alt="people" />
+						<img src="/span.css-snhnyn.svg" alt="span.css-snhnyn" />
+						<img src="/people.svg" alt="people" />
 						<button id="board">По доске</button>
 					</div>
 					<div class="right_desk">
-						<img src="./public/rocket.svg" alt="rocket" />
-						<img src="./public/664d88a0fc08655e416b.svg.svg" alt="" />
+						<img src="/rocket.svg" alt="rocket" />
+						<img src="/664d88a0fc08655e416b.svg.svg" alt="" />
 						<button id="filter">Фильтры</button>
 
 						<img
@@ -172,7 +172,7 @@
 							id="user_img"
 						/>
 						<button id="share">Поделиться</button>
-						<img src="./public/tobe.svg" alt="tobe" />
+						<img src="/tobe.svg" alt="tobe" />
 					</div>
 				</div>
 
@@ -184,24 +184,18 @@
 					<button id="add_card">+ Добавить Карточку</button>
 				</div> -->
 
-				<div class="desk_cont">
-					<div class="desk_container"></div>
-					<div class="desk_container"></div>
-					<div class="desk_container"></div>
-				</div>
+				<div class="desk_cont"></div>
 				<div class="trash">
-					<img src="./public/trash.gif" alt="trash" id="trash">
+					<img src="/trash.gif" alt="trash" id="trash" />
 				</div>
 
-				<audio controls>
-					
-				</audio>
+				<audio controls></audio>
 			</div>
 		</div>
 		<div id="overlay" class="overlay">
 			<div class="task-form-container">
 				<h2>Create a New Task</h2>
-				<button class="close_dialog">close</button>
+				<button class="close_dialog" >close</button>
 				<form id="task-form" name="task-form">
 					<div class="form-group">
 						<label for="task-title">Task Title</label>
@@ -226,12 +220,37 @@
 
 					<div class="form-group">
 						<label for="task-labels">Task Labels</label>
-						<select name="status">
-							<option value="1">Todo</option>
+						<select name="status" id="status">
+							<!-- <option value="1">Todo</option>
 							<option value="2">In progress</option>
-							<option value="3">Done</option>
+							<option value="3">Done</option> -->
 						</select>
 					</div>
+
+					<button type="submit">Create Task</button>
+				</form>
+			</div>
+		</div>
+
+		<div id="overlay_column" class="overlay">
+			<div class="task-form-container">
+				<h2>Create a New Task</h2>
+				<button class="close_dialogs">close</button>
+				<form id="task-form" name="column-task">
+					<div class="form-group">
+						<label for="task-title">Task Title</label>
+						<input
+							type="text"
+							id="task-title"
+							name="title"
+							placeholder="Enter task title"
+							required
+						/>
+					</div>
+
+				
+
+					
 
 					<button type="submit">Create Task</button>
 				</form>

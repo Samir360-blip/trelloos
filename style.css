@@ -67,7 +67,7 @@ button {
 }
 
 .container {
-	max-width: 1500px;
+	max-width: 100%;
 	margin: 0 auto;
 	display: flex;
 }
@@ -260,6 +260,11 @@ button {
 	text-align: start;
 }
 
+.desk_cont {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+}
+
 .desk_container {
 	width: 100%;
 	min-height: 450px;
@@ -267,7 +272,10 @@ button {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	background-color: #903f66;
+	background-color: black;
+	border-radius: 10px;
+	margin: 15px;
+
 }
 
 .desk_cont {
@@ -435,6 +443,17 @@ button[type='submit']:hover {
 	border: none;
 	width: 70px;
 	height: 30px;
+}
+
+.close_dialogs {
+	margin-left: 300px;
+	background-color: red;
+	border-radius: 10px;
+	color: white;
+	border: none;
+	width: 70px;
+	height: 30px;
+
 }
 
 .trash {
