@@ -11,15 +11,16 @@ const baseUrl = 'http://localhost:8080/'
 const info = await apiCall.getData('/info')
 const cols_arr = await apiCall.getData('/columns')
 const desk_cont = document.querySelector('.desk_cont')
-const cols = document.querySelectorAll('.col')
-
-// reload(info, Task,cols)
-reload(cols_arr, Column, [desk_cont], false)
-
 const close_dialog = document.querySelector('.close_dialog')
 const overlay = document.querySelector('#overlay')
 const add_btn = document.querySelector('#add_btn')
 const select = document.querySelector('#status')
+const overlay_column = document.querySelector('#overlay_column')
+const board = document.querySelector('#board')
+const close_dialogs = document.querySelector('.close_dialogs')
+
+console.log(info)
+
 close_dialog.onclick = () => {
 	overlay.style.display = 'none' // Скрываем диалог
 }
@@ -27,40 +28,41 @@ close_dialog.onclick = () => {
 add_btn.onclick = () => {
 	overlay.style.display = 'flex' // Показываем диалог
 }
-const overlay_column = document.querySelector('#overlay_column')
-const board = document.querySelector('#board')
 
 board.onclick = () => {
-	overlay_column.style.display = "flex"
+	overlay_column.style.display = 'flex'
 }
-
-const close_dialogs = document.querySelector('.close_dialogs')
 
 close_dialogs.onclick = () => {
 	overlay_column.style.display = 'none'
 }
 
-
 const columntask = document.forms.namedItem('column-task')
 
+let currentStatus = localStorage.getItem('currentStatus')
+	? parseInt(localStorage.getItem('currentStatus'))
+	: 1
 
-
-columntask.onsubmit = async (e) => {
+columntask.onsubmit = async e => {
 	e.preventDefault()
-
-	const column = {}
-
-	const fm = new FormData(e.target)
-
-	fm.forEach((val,key) => (column[key] = val))
-
-	const res = await apiCall.postData('/columns', column)
-
-	if (res.status !== 201) {
-		form.reset()
-		location.assign('/')
+	let col = {
+		title: new FormData(columntask).get('title'),
+		status: currentStatus.toString(),
 	}
+
+	currentStatus++
+	localStorage.setItem('currentStatus', currentStatus)
+
+	const res = await apiCall.postData('/columns', col)
+
+	reload(cols_arr, Column, [desk_cont], false)
+
+	form.reset()
+	location.assign('/')
 }
+
+reload(cols_arr, Column, [desk_cont], false)
+
 const form = document.forms.namedItem('task-form')
 
 for (let item of cols_arr) {
@@ -68,6 +70,8 @@ for (let item of cols_arr) {
 
 	select.append(opt)
 }
+
+
 form.onsubmit = async e => {
 	e.preventDefault()
 
@@ -84,6 +88,10 @@ form.onsubmit = async e => {
 		location.assign('/')
 	}
 }
+
+const cols = document.querySelectorAll('.desk_container')
+
+reload(info, Task, cols)
 
 const trash = document.querySelector('.trash')
 const trash_img = document.querySelector('#trash')

@@ -1,39 +1,8 @@
 {
   "info": [
-    {
-      "id": "d05b",
-      "title": "Salam",
-      "description": "Salam",
-      "status": "2"
-    }
+   
   ],
   "columns": [
-    {
-      "id": "0b97",
-      "status": "1",
-      "title": "todo"
-    },
-    {
-      "id": "0b97",
-      "status": "2",
-      "title": "description"
-    },
-    {
-      "id": "0b97",
-      "status": "3",
-      "title": "description"
-    },
-    {
-      "id": "c255",
-      "title": "Salam"
-    },
-    {
-      "id": "f6bd",
-      "title": "Salam"
-    },
-    {
-      "id": "9268",
-      "title": "Samarkand"
-    }
+    
   ]
 }
