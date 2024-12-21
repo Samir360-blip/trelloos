@@ -1,131 +1,73 @@
-import { Column } from './components/Columns.js'
-import { Task } from './components/Task.js'
-import { reload } from './utils/helpres.js'
-import { ApiCall } from './utils/http.request.js'
-import { Toast } from 'toaster-js'
-import 'toaster-js/default.scss'
+const addBtn = document.getElementById("add_btn");
+const overlay = document.getElementById("overlay");
+const overlayColumn = document.getElementById("overlay_column");
+const closeDialog = document.querySelector(".close_dialog");
+const closeDialogs = document.querySelector(".close_dialogs");
+const taskForm = document.getElementById("task-form");
+const taskColumnForm = document.querySelector("form[name='column-task']");
+const taskTitleInput = document.getElementById("task-title");
+const taskDescriptionInput = document.getElementById("task-description");
 
-const apiCall = new ApiCall(import.meta.env.VITE_API_URL)
-const baseUrl = 'http://localhost:8080/'
 
-const info = await apiCall.getData('/info')
-const cols_arr = await apiCall.getData('/columns')
-const desk_cont = document.querySelector('.desk_cont')
-const close_dialog = document.querySelector('.close_dialog')
-const overlay = document.querySelector('#overlay')
-const add_btn = document.querySelector('#add_btn')
-const select = document.querySelector('#status')
-const overlay_column = document.querySelector('#overlay_column')
-const board = document.querySelector('#board')
-const close_dialogs = document.querySelector('.close_dialogs')
+addBtn.addEventListener("click", () => {
+  overlay.style.display = "flex";
+});
 
-console.log(info)
+closeDialog.addEventListener("click", () => {
+  overlay.style.display = "none";
+});
 
-close_dialog.onclick = () => {
-	overlay.style.display = 'none' // Скрываем диалог
-}
+closeDialogs.addEventListener("click", () => {
+  overlayColumn.style.display = "none";
+});
 
-add_btn.onclick = () => {
-	overlay.style.display = 'flex' // Показываем диалог
-}
+taskForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const title = taskTitleInput.value;
+  const description = taskDescriptionInput.value;
 
-board.onclick = () => {
-	overlay_column.style.display = 'flex'
-}
+  if (title && description) {
+    createTask(title, description);
+    taskForm.reset();
+    overlay.style.display = "none";
+  } else {
+    alert("Please fill in all fields");
+  }
+});
 
-close_dialogs.onclick = () => {
-	overlay_column.style.display = 'none'
-}
 
-const columntask = document.forms.namedItem('column-task')
+taskColumnForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const title = taskTitleInput.value;
 
-let currentStatus = localStorage.getItem('currentStatus')
-	? parseInt(localStorage.getItem('currentStatus'))
-	: 1
+  if (title) {
+    createColumnTask(title);
+    taskColumnForm.reset();
+    overlayColumn.style.display = "none";
+  } else {
+    alert("Please enter a task title");
+  }
+});
 
-columntask.onsubmit = async e => {
-	e.preventDefault()
-	let col = {
-		title: new FormData(columntask).get('title'),
-		status: currentStatus.toString(),
-	}
 
-	currentStatus++
-	localStorage.setItem('currentStatus', currentStatus)
-
-	const res = await apiCall.postData('/columns', col)
-
-	reload(cols_arr, Column, [desk_cont], false)
-
-	form.reset()
-	location.assign('/')
-}
-
-reload(cols_arr, Column, [desk_cont], false)
-
-const form = document.forms.namedItem('task-form')
-
-for (let item of cols_arr) {
-	const opt = new Option(item.title, item.status)
-
-	select.append(opt)
+function createTask(title, description) {
+  const taskContainer = document.createElement("div");
+  taskContainer.classList.add("task");
+  const taskTitle = document.createElement("h3");
+  taskTitle.textContent = title;
+  const taskDescription = document.createElement("p");
+  taskDescription.textContent = description;
+  taskContainer.appendChild(taskTitle);
+  taskContainer.appendChild(taskDescription);
+  document.querySelector(".desk_cont").appendChild(taskContainer);
 }
 
 
-form.onsubmit = async e => {
-	e.preventDefault()
-
-	const info = {}
-
-	const fm = new FormData(e.target)
-
-	fm.forEach((val, key) => (info[key] = val))
-
-	const res = await apiCall.postData('/info', info)
-
-	if (res.status !== 201) {
-		form.reset()
-		location.assign('/')
-	}
-}
-
-const cols = document.querySelectorAll('.desk_container')
-
-reload(info, Task, cols)
-
-const trash = document.querySelector('.trash')
-const trash_img = document.querySelector('#trash')
-
-trash_img.ondragover = e => {
-	e.preventDefault()
-}
-
-trash_img.ondrop = async e => {
-	e.preventDefault()
-
-	const selectedTask = document.querySelector('#selected')
-
-	const id = selectedTask.getAttribute('data-id')
-
-	trash_img.style.display = 'none'
-
-	const res = await fetch(`${baseUrl}` + 'info/' + id, {
-		method: 'delete',
-	})
-	selectedTask.remove()
-
-	if (res.status !== 200 || res.status == 201) {
-		new Toast('Ошибка в коде ')
-	}
-
-	const audio = document.querySelector('audio')
-
-	const source = document.createElement('source')
-
-	source.src = '/dropping-a-pen-on-wood-103665.mp3'
-	source.type = 'audio/mpeg'
-
-	audio.append(source)
-
-	audio.play()
+function createColumnTask(title) {
+  const taskContainer = document.createElement("div");
+  taskContainer.classList.add("task");
+  const taskTitle = document.createElement("h3");
+  taskTitle.textContent = title;
+  taskContainer.appendChild(taskTitle);
+  console.log("Column Task Created:", title);
 }

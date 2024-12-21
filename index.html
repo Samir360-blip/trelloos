@@ -1,261 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./style.css" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-			rel="stylesheet"
-		/>
-		<title>Trello</title>
-	</head>
-	<body>
-		<header>
-			<div class="head">
-				<nav class="left">
-					<img src="/Frame.svg" alt="Frame" />
-					<img src="/pseudo.svg" alt="logo" />
-					<button class="main_buttons" id="work_btn">
-						Рабочие пространства
-						<svg
-							width="17"
-							height="17"
-							viewBox="0 0 17 17"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M8.32858 11.6381L3.61455 6.92405C3.35419 6.6637 3.35419 6.24159 3.61455 5.98125C3.87489 5.7209 4.29701 5.7209 4.55735 5.98125L8.79998 10.2239L13.0426 5.98125C13.303 5.72089 13.7251 5.72089 13.9854 5.98125C14.2458 6.24159 14.2458 6.6637 13.9854 6.92405L9.27138 11.6381C9.01105 11.8985 8.58891 11.8985 8.32858 11.6381Z"
-								fill="#9FADBC"
-							/>
-						</svg>
-					</button>
-					<button class="main_buttons" id="last_btn">
-						Недавние
-						<svg
-							width="17"
-							height="17"
-							viewBox="0 0 17 17"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M8.32858 11.6381L3.61455 6.92405C3.35419 6.6637 3.35419 6.24159 3.61455 5.98125C3.87489 5.7209 4.29701 5.7209 4.55735 5.98125L8.79998 10.2239L13.0426 5.98125C13.303 5.72089 13.7251 5.72089 13.9854 5.98125C14.2458 6.24159 14.2458 6.6637 13.9854 6.92405L9.27138 11.6381C9.01105 11.8985 8.58891 11.8985 8.32858 11.6381Z"
-								fill="#9FADBC"
-							/>
-						</svg>
-					</button>
-					<button class="main_buttons" id="save_btn">
-						В избранном
-						<svg
-							width="17"
-							height="17"
-							viewBox="0 0 17 17"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M8.32858 11.6381L3.61455 6.92405C3.35419 6.6637 3.35419 6.24159 3.61455 5.98125C3.87489 5.7209 4.29701 5.7209 4.55735 5.98125L8.79998 10.2239L13.0426 5.98125C13.303 5.72089 13.7251 5.72089 13.9854 5.98125C14.2458 6.24159 14.2458 6.6637 13.9854 6.92405L9.27138 11.6381C9.01105 11.8985 8.58891 11.8985 8.32858 11.6381Z"
-								fill="#9FADBC"
-							/>
-						</svg>
-					</button>
-					<button class="main_buttons" id="shablon_btn">
-						Шаблоны
-						<svg
-							width="17"
-							height="17"
-							viewBox="0 0 17 17"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M8.32858 11.6381L3.61455 6.92405C3.35419 6.6637 3.35419 6.24159 3.61455 5.98125C3.87489 5.7209 4.29701 5.7209 4.55735 5.98125L8.79998 10.2239L13.0426 5.98125C13.303 5.72089 13.7251 5.72089 13.9854 5.98125C14.2458 6.24159 14.2458 6.6637 13.9854 6.92405L9.27138 11.6381C9.01105 11.8985 8.58891 11.8985 8.32858 11.6381Z"
-								fill="#9FADBC"
-							/>
-						</svg>
-					</button>
-					<button id="add_btn">Создать</button>
-				</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/vite.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@100..900&family=Roboto:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Trello</title>
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <nav class="left">
+          <img src="/Frame.svg" alt="Frame" />
+          <img src="/pseudo.svg" alt="logo" />
+          <button id="work_btn" class="main_buttons">Рабочие пространства</button>
+          <button id="last_btn" class="main_buttons">Недавние</button>
+          <button id="save_btn" class="main_buttons">В избранном</button>
+          <button id="shablon_btn" class="main_buttons">Шаблоны</button>
+          <button id="add_btn">Создать</button>
+        </nav>
+        <nav class="right">
+          <input type="text" id="search" name="search" placeholder="Поиск" />
+          <img src="/push.svg" alt="push" />
+          <img src="/question.svg" alt="question" />
+          <img
+            src="https://lh3.googleusercontent.com/a/ACg8ocJAWwhNmPXYkqC9Ysbdtf9Hsw4BuP9cOPtcHxoGi3P5PztGb1pQ=s288-c-no"
+            alt="user_img"
+            id="user_img"
+          />
+        </nav>
+      </div>
+    </header>
 
-				<nav class="right">
-					<form>
-						<input type="text" placeholder="Поиск" id="search" name="search" />
-					</form>
-					<img src="/push.svg" alt="push" />
-					<img src="/question.svg" alt="question" />
+    <div class="container">
+      <div class="desks">
+        <div class="firs_desk">
+          <span>PRODIGY: рабочее пространство</span>
+          <button class="close_desk">
+            <svg width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M6.15732 8.18649C6.26612 8.29379 6.35242 8.42149..." fill="#948873" />
+            </svg>
+          </button>
+        </div>
+        <div class="sidebar">
+          <div class="menu-item">Доски</div>
+          <div class="menu-item">Участники <span class="plus-icon">+</span></div>
+          <div class="menu-item">Настройки рабочего пространства <span class="dropdown-icon">▼</span></div>
+          <div class="menu-section">
+            <div class="section-title">Режимы просмотра рабочего пространства</div>
+            <div class="submenu-item">Таблица</div>
+            <div class="submenu-item">Календарь</div>
+          </div>
+          <div class="menu-section">
+            <div class="section-title">Мои доски <span class="plus-icon">+</span></div>
+            <div class="board-item">
+              <div class="color-block" style="background-color: #f7a6c1"></div>
+              <span class="board-title">desk</span>
+            </div>
+          </div>
+        </div>
+        <nav class="premium_sub">
+          <span>Попробовать Premium бесплатно</span>
+        </nav>
+      </div>
 
-					<img
-						src="https://lh3.googleusercontent.com/a/ACg8ocJAWwhNmPXYkqC9Ysbdtf9Hsw4BuP9cOPtcHxoGi3P5PztGb1pQ=s288-c-no"
-						alt="user_img"
-						id="user_img"
-					/>
-				</nav>
-			</div>
-		</header>
+      <div class="big_desk">
+        <div class="desk_head">
+          <div class="left_head">
+            <span>desk</span>
+            <button id="board">По доске</button>
+          </div>
+          <div class="right_desk">
+            <button id="filter">Фильтры</button>
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocJAWwhNmPXYkqC9Ysbdtf9Hsw4BuP9cOPtcHxoGi3P5PztGb1pQ=s288-c-no" alt="user_img" />
+            <button id="share">Поделиться</button>
+          </div>
+        </div>
 
-		<div class="container">
-			<div class="desks">
-				<nav class="firs_desk">
-					<div style="display: flex; flex-direction: column; gap: 5px">
-						<span style="font-size: 14px">PRODIGY: рабочее пространство</span>
-						<span style="font-size: 12px">Бесплатно</span>
-					</div>
-					<div>
-						<button class="close_desk">
-							<svg
-								width="7"
-								height="11"
-								viewBox="0 0 7 11"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M6.15732 8.18649C6.26612 8.29379 6.35242 8.42149 6.41132 8.5624C6.47032 8.7033 6.50062 8.85449 6.50062 9.00729C6.50062 9.15999 6.47032 9.3112 6.41132 9.4521C6.35242 9.59299 6.26612 9.72079 6.15732 9.82799C5.93682 10.0457 5.63942 10.1677 5.32962 10.1677C5.01972 10.1677 4.72232 10.0457 4.50182 9.82799L1.04262 6.39799C0.923432 6.27979 0.828792 6.13909 0.764212 5.98419C0.699632 5.82919 0.666382 5.66289 0.666382 5.49499C0.666382 5.32709 0.699632 5.16089 0.764212 5.00589C0.828792 4.85089 0.923432 4.71019 1.04262 4.59199L4.49012 1.17368C4.71072 0.955674 5.00832 0.833405 5.31852 0.833405C5.62862 0.833405 5.92622 0.955674 6.14682 1.17368C6.25562 1.28092 6.34192 1.4087 6.40082 1.54959C6.45982 1.69049 6.49012 1.84169 6.49012 1.99439C6.49012 2.14719 6.45982 2.29839 6.40082 2.43929C6.34192 2.58019 6.25562 2.70799 6.14682 2.81519L3.44252 5.49499L6.15732 8.18649Z"
-									fill="#948873"
-								/>
-							</svg>
-						</button>
-					</div>
-				</nav>
-				<div class="sidebar">
-					<div class="menu-item">Доски</div>
-					<div class="menu-item">Участники<span class="plus-icon">+</span></div>
-					<div class="menu-item">
-						Настройки рабочего пространства
-						<span class="dropdown-icon">▼</span>
-					</div>
-					<div class="menu-section">
-						<div class="section-title">
-							Режимы просмотра рабочего пространства
-						</div>
-						<div class="submenu-item">Таблица</div>
-						<div class="submenu-item">Календарь</div>
-					</div>
-					<div class="menu-section">
-						<div class="section-title">
-							Мои доски<span class="plus-icon">+</span>
-						</div>
-						<div class="board-item">
-							<div class="color-block" style="background-color: #f7a6c1"></div>
-							<span class="board-title">desk</span>
-						</div>
-					</div>
-				</div>
-				<nav class="premium_sub">
-					<div class="sub">
-						<span>Попробовать Premium бесплатно</span>
-					</div>
-				</nav>
-			</div>
+        <div class="desk_cont"></div>
+        <div class="trash">
+          <img src="/trash.gif" alt="trash" id="trash" />
+        </div>
 
-			<div class="big_desk">
-				<div class="desk_head">
-					<div class="left_head">
-						<span>desk</span>
-						<img src="/span.css-snhnyn.svg" alt="span.css-snhnyn" />
-						<img src="/people.svg" alt="people" />
-						<button id="board">По доске</button>
-					</div>
-					<div class="right_desk">
-						<img src="/rocket.svg" alt="rocket" />
-						<img src="/664d88a0fc08655e416b.svg.svg" alt="" />
-						<button id="filter">Фильтры</button>
+        <audio controls></audio>
+      </div>
+    </div>
 
-						<img
-							src="https://lh3.googleusercontent.com/a/ACg8ocJAWwhNmPXYkqC9Ysbdtf9Hsw4BuP9cOPtcHxoGi3P5PztGb1pQ=s288-c-no"
-							alt="user_img"
-							id="user_img"
-						/>
-						<button id="share">Поделиться</button>
-						<img src="/tobe.svg" alt="tobe" />
-					</div>
-				</div>
 
-				<!-- <div class="todo">
-					<span>Todo</span>
-					<form>
-						<input type="text" placeholder="Вступительное собрание" id="enter" name="enter">
-					</form>
-					<button id="add_card">+ Добавить Карточку</button>
-				</div> -->
+    <div id="overlay" class="overlay">
+      <div class="task-form-container">
+        <h2>Create a New Task</h2>
+        <button class="close_dialog">close</button>
+        <form id="task-form" name="task-form">
+          <div class="form-group">
+            <label for="task-title">Task Title</label>
+            <input type="text" id="task-title" name="title" placeholder="Enter task title" required />
+          </div>
+          <div class="form-group">
+            <label for="task-description">Task Description</label>
+            <textarea id="task-description" name="description" placeholder="Enter task description" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="task-labels">Task Labels</label>
+            <select name="status" id="status"></select>
+          </div>
+          <button type="submit">Create Task</button>
+        </form>
+      </div>
+    </div>
 
-				<div class="desk_cont"></div>
-				<div class="trash">
-					<img src="/trash.gif" alt="trash" id="trash" />
-				</div>
+   
+    <div id="overlay_column" class="overlay">
+      <div class="task-form-container">
+        <h2>Create a New Task</h2>
+        <button class="close_dialogs">close</button>
+        <form id="task-form" name="column-task">
+          <div class="form-group">
+            <label for="task-title">Task Title</label>
+            <input type="text" id="task-title" name="title" placeholder="Enter task title" required />
+          </div>
+          <button type="submit">Create Task</button>
+        </form>
+      </div>
+    </div>
 
-				<audio controls></audio>
-			</div>
-		</div>
-		<div id="overlay" class="overlay">
-			<div class="task-form-container">
-				<h2>Create a New Task</h2>
-				<button class="close_dialog" >close</button>
-				<form id="task-form" name="task-form">
-					<div class="form-group">
-						<label for="task-title">Task Title</label>
-						<input
-							type="text"
-							id="task-title"
-							name="title"
-							placeholder="Enter task title"
-							required
-						/>
-					</div>
-
-					<div class="form-group">
-						<label for="task-description">Task Description</label>
-						<textarea
-							id="task-description"
-							name="description"
-							placeholder="Enter task description"
-							required
-						></textarea>
-					</div>
-
-					<div class="form-group">
-						<label for="task-labels">Task Labels</label>
-						<select name="status" id="status">
-							<!-- <option value="1">Todo</option>
-							<option value="2">In progress</option>
-							<option value="3">Done</option> -->
-						</select>
-					</div>
-
-					<button type="submit">Create Task</button>
-				</form>
-			</div>
-		</div>
-
-		<div id="overlay_column" class="overlay">
-			<div class="task-form-container">
-				<h2>Create a New Task</h2>
-				<button class="close_dialogs">close</button>
-				<form id="task-form" name="column-task">
-					<div class="form-group">
-						<label for="task-title">Task Title</label>
-						<input
-							type="text"
-							id="task-title"
-							name="title"
-							placeholder="Enter task title"
-							required
-						/>
-					</div>
-
-				
-
-					
-
-					<button type="submit">Create Task</button>
-				</form>
-			</div>
-		</div>
-		<script type="module" src="/main.js"></script>
-	</body>
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
